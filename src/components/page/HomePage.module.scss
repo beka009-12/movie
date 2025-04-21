@@ -1,0 +1,42 @@
+.HomePage {
+  padding-block: 50px;
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .card {
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        width: 320px;
+        flex-shrink: 0;
+        &:hover {
+          transform: translateY(-5px) scale(1.03);
+        }
+        .cardImage {
+          width: 100%;
+          height: 480px;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.horizontalScroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 24px;
+  padding: 10px 5vw;
+  margin: 0 -5vw;
+  flex-wrap: nowrap;
+}

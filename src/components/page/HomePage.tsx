@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelectore } from "../../store/Store";
 import { setData } from "../../store/slice/DataSlice";
 import { fetchPopular } from "../api/movie/Movie";
 import { fetchTopRated } from "../api/tv/Tv";
-import scss from "./HomePage.module.scss"; // Стиль для компонента
+import scss from "./HomePage.module.scss";
 
 const HomePage: FC = () => {
   const { data } = useAppSelectore((s) => s.data);
@@ -12,7 +12,6 @@ const HomePage: FC = () => {
   const [popularType, setPopularType] = useState<"movie" | "tv">("movie");
   const [topRatedType, setTopRatedType] = useState<"movie" | "tv">("tv");
 
-  // Загружаем данные
   useEffect(() => {
     const loadData = async () => {
       const popular = await fetchPopular(popularType);
@@ -24,10 +23,9 @@ const HomePage: FC = () => {
 
   return (
     <section className={scss.HomePage}>
-      <div className="container">
-        <div className={scss.content}>
-          {/* Popular Section */}
-          <div className={scss.section}>
+      <div className={scss.content}>
+        <div className={scss.section}>
+          <div className={scss.text}>
             <h1>Popular ({popularType})</h1>
             <select
               value={popularType}
@@ -36,24 +34,26 @@ const HomePage: FC = () => {
               <option value="movie">Movie</option>
               <option value="tv">TV</option>
             </select>
-
-            <div className={scss.grid}>
-              {data.popular?.map((item) => (
-                <div className={scss.card} key={item.id}>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                    alt={item.name}
-                  />
-                  <h2>{item.name}</h2>
-                  <p>{item.overview.slice(0, 100)}...</p>
-                  <span>⭐ {item.vote_average}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Top Rated Section */}
-          <div className={scss.section}>
+          <div className={scss.horizontalScroll}>
+            {data.popular?.map((item) => (
+              <div className={scss.card} key={item.id}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                  alt={item.name || item.title}
+                  className={scss.cardImage}
+                />
+                <h2>{item.name || item.title}</h2>
+                <span>{item.release_date || item.first_air_date}</span>
+                <span>⭐ {item.vote_average}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={scss.section}>
+          <div className={scss.text}>
             <h1>Top Rated ({topRatedType})</h1>
             <select
               value={topRatedType}
@@ -64,20 +64,21 @@ const HomePage: FC = () => {
               <option value="movie">Movie</option>
               <option value="tv">TV</option>
             </select>
+          </div>
 
-            <div className={scss.grid}>
-              {data.topRated?.map((item) => (
-                <div className={scss.card} key={item.id}>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                    alt={item.name}
-                  />
-                  <h2>{item.name}</h2>
-                  <p>{item.overview.slice(0, 100)}...</p>
-                  <span>⭐ {item.vote_average}</span>
-                </div>
-              ))}
-            </div>
+          <div className={scss.horizontalScroll}>
+            {data.topRated?.map((item) => (
+              <div className={scss.card} key={item.id}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                  alt={item.name || item.title}
+                  className={scss.cardImage}
+                />
+                <h2>{item.name || item.title}</h2>
+                <span>{item.release_date || item.first_air_date}</span>
+                <span>⭐ {item.vote_average}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@
   box-sizing: border-box;
   text-decoration: none;
   border: none;
+  font-family: "Circular Bold", "plexeina-bold", Helvetica, sans-serif;
 }
 
 .container {
