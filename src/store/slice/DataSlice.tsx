@@ -2,8 +2,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface IType {
   id: number;
-  name: string;
+  title?: string;
+  name?: string;
   poster_path: string;
+  first_air_date: string;
   overview: string;
   vote_average: number;
   release_date?: string;
@@ -22,7 +24,7 @@ const initialState: { data: IData } = {
 };
 
 const dataSlice = createSlice({
-  name: "data", // переименовано в "data"
+  name: "data",
   initialState,
   reducers: {
     setData: (state, action: PayloadAction<IData>) => {
