@@ -1,42 +1,94 @@
 .HomePage {
-  padding-block: 50px;
+  padding-block: 60px;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  min-height: 100vh;
+
   .content {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px;
+
     .section {
       display: flex;
       flex-direction: column;
-      gap: 30px;
-      .card {
-        background-color: #ffffff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease;
-        cursor: pointer;
-        width: 320px;
-        flex-shrink: 0;
-        &:hover {
-          transform: translateY(-5px) scale(1.03);
+      gap: 20px;
+
+      .text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        h1 {
+          font-size: 2rem;
+          font-weight: 700;
         }
-        .cardImage {
-          width: 100%;
-          height: 480px;
-          object-fit: cover;
-          display: block;
+
+        select {
+          background: #1e1e2f;
+          color: #fff;
+          padding: 8px 16px;
+          border-radius: 8px;
+          border: none;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            background: #353557;
+          }
+        }
+      }
+
+      .block {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 24px;
+
+        .card {
+          background: #1c1c2b;
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+          transition: transform 0.3s, box-shadow 0.3s;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+          }
+
+          .cardImage {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            display: block;
+          }
+
+          .cardInfo {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            h2 {
+              font-size: 1rem;
+              font-weight: 600;
+              margin: 0;
+              color: #ffffff;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            span {
+              font-size: 0.875rem;
+              color: #bbb;
+            }
+          }
         }
       }
     }
   }
-}
-
-.horizontalScroll {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 24px;
-  padding: 10px 5vw;
-  margin: 0 -5vw;
-  flex-wrap: nowrap;
 }
