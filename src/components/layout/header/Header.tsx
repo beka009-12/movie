@@ -36,8 +36,8 @@ const Header: FC = () => {
             ))}
           </nav>
           <div className={scss.btn}>
-            <button className={scss.logIn}>Войти</button>
-            <button className={scss.signUp}>Зарегистрируйтесь бесплатно</button>
+            <button className={scss.logIn}onClick={()=> navigate("/Login")}>Войти</button>
+            <button className={scss.signUp}onClick={()=> navigate("/Register")}>Зарегистрируйтесь бесплатно</button>
           </div>
         </div>
       </div>

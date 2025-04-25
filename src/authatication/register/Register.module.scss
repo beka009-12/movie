@@ -1,0 +1,240 @@
+.Register {
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/9390f6f6-cf80-4bc9-8981-8c2cc8adf98a/web/KG-ru-20250421-TRIFECTA-perspective_a49f8757-ae99-4013-b63e-6f8bb8732426_small.jpg");
+  position: relative;
+  height: 100vh;
+  background-size: 145%;
+  background-position: left center;
+  // background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.bgOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.registerBox {
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 60px 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.registerBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 400px;
+}
+
+.registerBlock h1 {
+  font-weight: 700;
+  font-size: 32px;
+  color: #fff;
+  // text-align: left;
+}
+
+.radioInput {
+  position: relative;
+  display: flex;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.radioInput input {
+  display: none;
+}
+
+.radioInput label {
+  width: 100%;
+  padding: 12px 0;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.selection {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  background-color: rgb(203, 5, 5);
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+.regInput {
+  position: relative;
+}
+
+.regInput .input {
+  font-size: 16px;
+  padding: 12px 10px 10px 5px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #666;
+  background: transparent;
+  color: white;
+}
+
+.regInput .input:focus {
+  outline: none;
+}
+
+.regInput .label {
+  color: #999;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 12px;
+  display: flex;
+}
+
+.regInput .labelChar {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.05s);
+}
+
+.regInput .input:focus ~ .label .labelChar,
+.regInput .input:valid ~ .label .labelChar {
+  transform: translateY(-22px);
+  font-size: 14px;
+  color: #ff0033;
+}
+
+.regInput .bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.regInput .bar::before,
+.regInput .bar::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #ff0033;
+  transition: 0.2s ease all;
+}
+
+.regInput .bar::before {
+  left: 50%;
+}
+
+.regInput .bar::after {
+  right: 50%;
+}
+
+.regInput .input:focus ~ .bar::before,
+.regInput .input:focus ~ .bar::after {
+  width: 50%;
+}
+
+.regBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.regBtn button {
+  font-weight: 600;
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.regBtn button::before {
+  content: "";
+  background: linear-gradient(120deg, #b30000, #ff1a1a);
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.regBtn button:hover::before {
+  transform: scaleX(1);
+}
+
+.regBtn button:hover {
+  color: #fff;
+}
+
+.google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.google img {
+  width: 20px;
+  height: 20px;
+}
+
+.registerBlock a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.registerBlock p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.regInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 15px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.regInfo a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 14px;
+}

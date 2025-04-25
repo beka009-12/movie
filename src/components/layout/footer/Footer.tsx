@@ -52,16 +52,16 @@ const Footer: FC = () => {
               </ul>
             </div>
             <div className={scss.footerText}>
-              <h3>Plex Pass</h3>
+              <h3>Start Pass</h3>
               <ul>
                 <li>
                   <a href="#">Подключить Премиум</a>
                 </li>
                 <li>
-                  <a href="#">Plexamp</a>
+                  <a href="#">Start</a>
                 </li>
                 <li>
-                  <a href="#">Plex Labs</a>
+                  <a href="#">Start Labs</a>
                 </li>
                 <li>
                   <a href="#">Специальные предложения</a>
@@ -72,7 +72,7 @@ const Footer: FC = () => {
               <h3>Загрузки</h3>
               <ul>
                 <li>
-                  <a href="#">Медиасервер Plex</a>
+                  <a href="#">Медиасервер Start</a>
                 </li>
                 <li>
                   <a href="#">Плекс</a>
@@ -81,7 +81,7 @@ const Footer: FC = () => {
                   <a href="#">Плексамп</a>
                 </li>
                 <li>
-                  <a href="#">Фотографии Plex</a>
+                  <a href="#">Фотографии Start</a>
                 </li>
                 <li>
                   <a href="#">Плекс Дэш</a>
@@ -127,7 +127,7 @@ const Footer: FC = () => {
               <h3>Смотреть бесплатно</h3>
               <ul>
                 <li>
-                  <a href="#">Откройте для себя Plex</a>
+                  <a href="#">Откройте для себя Start</a>
                 </li>
                 <li>
                   <a href="#">Поиск ТВ-каналов</a>
@@ -156,7 +156,7 @@ const Footer: FC = () => {
         </div>
         <div className={scss.footerBlock}>
           <div className={scss.footerLinks}>
-            <p>Авторские права © 2025 Plex</p>
+            <p>Авторские права © 2025 Start</p>
             <a href="#"></a>
             <a href="#">Конфиденциальность и юридическая информация</a>
             <a href="#">Доступность</a>
